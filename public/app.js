@@ -104,3 +104,8 @@ function closeBox(e){
 
 const help = document.querySelector('.helpButton');
 help.addEventListener('click',closeBox);
+
+let roomButton = document.querySelector('.room');
+roomButton.addEventListener('click',()=>{
+    location.replace("/private");
+});

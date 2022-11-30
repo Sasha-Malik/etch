@@ -57,7 +57,7 @@ privateSockets.on('connection', function(socket) {
 
     socket.on('cleanData',(data)=>{
         //privateSockets.emit('scleanData',data);
-        privateSockets.to(socket.roomName).emit('scleandata' , data);
+        privateSockets.to(socket.roomName).emit('scleanData' , data);
     })
 
     //Listen for this client to disconnect

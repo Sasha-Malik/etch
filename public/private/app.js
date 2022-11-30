@@ -5,7 +5,13 @@ let roomName = window.prompt("Enter a room name!");
 //Listen for confirmation of connection
 socket.on('connect', function() {
     console.log("Connected");
-    let roomData = {
+
+    while(!roomName || roomName == "")
+    {
+        roomName = window.prompt("Enter a room name!");
+    }
+   
+    let roomData = {          
         name : roomName
     }
     socket.emit("roomJoin",roomData);
