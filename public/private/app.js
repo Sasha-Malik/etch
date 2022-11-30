@@ -1,7 +1,14 @@
-let socket = io('/publicSpace');
+let socket = io('/privateSpace');
+
+let roomName = window.prompt("Enter a room name!");
+
 //Listen for confirmation of connection
 socket.on('connect', function() {
-  console.log("Connected");
+    console.log("Connected");
+    let roomData = {
+        name : roomName
+    }
+    socket.emit("roomJoin",roomData);
 });
 
 socket.on('sdata',(data)=>{
@@ -104,3 +111,4 @@ function closeBox(e){
 
 const help = document.querySelector('.helpButton');
 help.addEventListener('click',closeBox);
+
