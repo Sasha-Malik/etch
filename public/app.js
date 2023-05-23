@@ -50,8 +50,8 @@ function draw(e){
     if(this.classList.length !== 2 && isMouseDown == true)
     {    
         this.classList.add('color');
-        //console.log(e.path[0].id);
-        socket.emit('data',e.path[0].id);
+        socket.emit('data',e.fromElement.id);
+        
     }
 }
 
@@ -61,8 +61,8 @@ function drawClick(e){
     if(this.classList.length !== 2)
     {
         this.classList.add('color');
-        //console.log(e.path[0].id);
-        socket.emit('data',e.path[0].id);
+        //console.log(e.srcElement.id);
+        socket.emit('data',e.srcElement.id);
     }
     
     
